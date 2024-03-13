@@ -193,6 +193,7 @@ EOF
 ##########################################################################################
 #   move this file to proper directory
 ##########################################################################################
+echo 'moving minio.properties...'
 sudo mv ~/minio.properties /etc/default/minio
 
 sudo chown root:root /etc/default/minio
