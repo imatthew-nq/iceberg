@@ -245,7 +245,8 @@ mc admin user svcacct add icebergadmin icebergadmin >> ~/minio-output.properties
 ##########################################################################################
 echo 'creating bucket...'
 mc mb icebergadmin/iceberg-data icebergadmin
-
+sleep 5
+echo 'sleeping for a 10 sec...'
 ##########################################################################################
 #  let's reformat the output of access keys from an earlier step
 ##########################################################################################
