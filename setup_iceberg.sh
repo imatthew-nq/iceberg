@@ -202,6 +202,7 @@ sudo chown root:root /etc/default/minio
 ##########################################################################################
 sudo systemctl start minio.service
 
+sleep 15
 ##########################################################################################
 #  install the 'MinIO Client' on this server 
 ##########################################################################################
@@ -241,6 +242,7 @@ mc admin user svcacct add icebergadmin icebergadmin >> ~/minio-output.properties
 ##########################################################################################
 #  create a bucket as user icebergadmin for our iceberg data
 ##########################################################################################
+echo 'creating bucket...'
 mc mb icebergadmin/iceberg-data icebergadmin
 
 ##########################################################################################
