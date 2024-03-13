@@ -98,13 +98,15 @@ sudo apt install maven -y
 #  download apache spark standalone
 ##########################################################################################
 #wget https://dlcdn.apache.org/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz
-wget https://dlcdn.apache.org/spark/spark-3.4.2/spark-3.4.2-bin-hadoop3.tgz
 
-#tar -xzvf spark-3.3.1-bin-hadoop3.tgz
-tar -xzvf spark-3.4.2-bin-hadoop3.tgz
+# spark version moved to archive
+wget https://archive.apache.org/dist/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz
 
-#sudo mv spark-3.3.1-bin-hadoop3/ /opt/spark
-sudo mv spark-3.4.2-bin-hadoop3/ /opt/spark
+tar -xzvf spark-3.3.1-bin-hadoop3.tgz
+
+
+sudo mv spark-3.3.1-bin-hadoop3/ /opt/spark
+
 ##########################################################################################
 #  install aws cli
 ##########################################################################################
@@ -136,6 +138,7 @@ cp url-connection-client-2.19.19.jar /opt/spark/jars/
 #  download iceberg spark runtime 
 ##########################################################################################
 wget https://repo.maven.apache.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.3_2.12/1.1.0/iceberg-spark-runtime-3.3_2.12-1.1.0.jar
+
 
 cp ~/iceberg-spark-runtime-3.3_2.12-1.1.0.jar /opt/spark/jars/
 
