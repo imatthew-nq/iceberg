@@ -243,10 +243,8 @@ mc admin user svcacct add icebergadmin icebergadmin >> ~/minio-output.properties
 ##########################################################################################
 #  create a bucket as user icebergadmin for our iceberg data
 ##########################################################################################
-echo 'creating bucket...'
 mc mb icebergadmin/iceberg-data icebergadmin
-sleep 5
-echo 'sleeping for a 10 sec...'
+
 ##########################################################################################
 #  let's reformat the output of access keys from an earlier step
 ##########################################################################################
@@ -274,9 +272,12 @@ echo
 ##########################################################################################
 #   create a directory for spark events, logs and some json files to be used in a lab
 ##########################################################################################
-mkdir -p /opt/spark/logs
-mkdir -p /opt/spark/spark-events
-mkdir -p /opt/spark/input
+sudo mkdir -p /opt/spark/logs
+sudo mkdir -p /opt/spark/spark-events
+sudo mkdir -p /opt/spark/input
+
+#  change ownership
+sudo chown -R centos:centos /opt/spark
 
 ##########################################################################################
 #  Create a json records file of sample customer data to be used in a lab
