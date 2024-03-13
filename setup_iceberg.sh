@@ -97,12 +97,14 @@ sudo apt install maven -y
 #########################################################################################
 #  download apache spark standalone
 ##########################################################################################
-wget https://dlcdn.apache.org/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz
+#wget https://dlcdn.apache.org/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz
+wget https://dlcdn.apache.org/spark/spark-3.4.2/spark-3.4.2-bin-hadoop3.tgz
 
-tar -xzvf spark-3.3.1-bin-hadoop3.tgz
+#tar -xzvf spark-3.3.1-bin-hadoop3.tgz
+tar -xzvf spark-3.4.2-bin-hadoop3.tgz
 
-sudo mv spark-3.3.1-bin-hadoop3/ /opt/spark
-
+#sudo mv spark-3.3.1-bin-hadoop3/ /opt/spark
+sudo mv spark-3.4.2-bin-hadoop3/ /opt/spark
 ##########################################################################################
 #  install aws cli
 ##########################################################################################
@@ -272,12 +274,10 @@ echo
 ##########################################################################################
 #   create a directory for spark events, logs and some json files to be used in a lab
 ##########################################################################################
-sudo mkdir -p /opt/spark/logs
-sudo mkdir -p /opt/spark/spark-events
-sudo mkdir -p /opt/spark/input
+mkdir -p /opt/spark/logs
+mkdir -p /opt/spark/spark-events
+mkdir -p /opt/spark/input
 
-#  change ownership
-sudo chown -R centos:centos /opt/spark
 
 ##########################################################################################
 #  Create a json records file of sample customer data to be used in a lab
