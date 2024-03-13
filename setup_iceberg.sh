@@ -205,7 +205,8 @@ sudo systemctl start minio.service
 ##########################################################################################
 #  install the 'MinIO Client' on this server 
 ##########################################################################################
-curl https://dl.min.io/client/mc/release/linux-amd64/mc \
+#curl https://dl.min.io/client/mc/release/linux-amd64/mc \ (this was the original line - updated 3.13.2024)
+curl https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.2023-01-11T03-14-16Z \
   --create-dirs \
   -o $HOME/minio-binaries/mc
 
